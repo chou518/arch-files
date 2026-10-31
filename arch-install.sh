@@ -375,15 +375,15 @@ chmod 700 /mnt/root/chroot-setup.sh
 log "Configuring the new system"
 arch-chroot /mnt /root/chroot-setup.sh
 
-# Put post-install.sh in the new user's home, if it sits next to this script
-SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+# Put post-install.sh in the new user's home, downloaded from GitHub Pages
+POST_URL="https://chou518.github.io/arch-files/post-install.sh"
 POST_NOTE="Then log in, open Konsole and run:  bash ~/post-install.sh"
-if [[ -f $SCRIPT_DIR/post-install.sh ]]; then
-    install -m 755 "$SCRIPT_DIR/post-install.sh" "/mnt/home/$USERNAME/post-install.sh"
+if curl -fsSL -o /tmp/post-install.sh "$POST_URL"; then
+    install -m 755 /tmp/post-install.sh "/mnt/home/$USERNAME/post-install.sh"
     arch-chroot /mnt chown "$USERNAME:$USERNAME" "/home/$USERNAME/post-install.sh"
 else
-    warn "post-install.sh was not found next to this script, so it was not copied."
-    POST_NOTE="Then copy post-install.sh into your home folder, log in, and run it in Konsole."
+    warn "Could not download post-install.sh, so it was not copied."
+    POST_NOTE="Then download post-install.sh ($POST_URL) into your home folder, log in, and run it in Konsole."
 fi
 
 # ------------------------------- finish --------------------------------
