@@ -1,4 +1,4 @@
-# Arch-Install
-2026 | Personal install script for Arch Linux
+# Arch-Files
+2026 | Personal files for Arch Linux
 
 My personal Linux files.
