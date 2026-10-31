@@ -158,7 +158,7 @@ PKGS=(base linux linux-headers linux-firmware "$UCODE" btrfs-progs cryptsetup
       limine efibootmgr dosfstools
       networkmanager sudo base-devel git vim man-db man-pages bash-completion
       snapper snap-pac inotify-tools zram-generator reflector pciutils
-      pipewire pipewire-alsa pipewire-pulse wireplumber)
+      pipewire pipewire-alsa pipewire-pulse wireplumber btrfs-assistant)
 # shellcheck disable=SC2206
 PKGS+=($EXTRA_PKGS)
 if [[ $PLYMOUTH == yes ]]; then PKGS+=(plymouth); fi
