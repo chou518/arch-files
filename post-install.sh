@@ -21,7 +21,7 @@
 SYSTEM_AUR_PKGS="limine-mkinitcpio-hook limine-snapper-sync"
 
 # Your own AUR packages, space-separated, e.g. "brave-bin protonup-qt"
-AUR_PKGS="heroic-games-launcher-bin protonplus headset-battery-indicator-git plex-desktop octopi"
+AUR_PKGS="heroic-games-launcher-bin protonplus headset-battery-indicator-git octopi"
 
 # yes = remove build-only dependencies (Java, Gradle, ...) after building
 REMOVE_MAKEDEPS="yes"
