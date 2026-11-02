@@ -11,3 +11,5 @@ pactl set-source-volume alsa_input.usb-Corsair_CORSAIR_VOID_ELITE_Wireless_Gamin
 ```
 pactl list short sources
 ```
+
+---
